@@ -36,56 +36,56 @@ public class Main{
 
                     Autorization autorization = new Autorization();
                     LibraryManager libraryManager = new LibraryManager();
-                    String tempVar1, tempVar2,tempVar3,privilege, msgOut, tempVar4;
+                    String command, msgOut;
 
 
 
 
 
                     while (true) {
-                        tempVar1 = bufferedReader.readLine();
-                        if(tempVar1.equals("Login")){
-                            tempVar1 = bufferedReader.readLine();
-                            tempVar2 = bufferedReader.readLine();
-                            msgOut = Boolean.toString(autorization.autorizate(tempVar1, tempVar2));
+                        command = bufferedReader.readLine();
+                        if(command.equals("Login")){
+                            String login = bufferedReader.readLine();
+                            String password = bufferedReader.readLine();
+                            msgOut = Boolean.toString(autorization.autorizate(login, password));
                             bufferedWriter.write(msgOut);
                             bufferedWriter.newLine();
                             bufferedWriter.flush();
                         }
-                        else if(tempVar1.equals("Registration")){
-                            tempVar1 = bufferedReader.readLine();
-                            tempVar2 = bufferedReader.readLine();
-                            msgOut = Boolean.toString(autorization.newRegistration(tempVar1, tempVar2));
+                        else if(command.equals("Registration")){
+                            String login = bufferedReader.readLine();
+                            String password = bufferedReader.readLine();
+                            msgOut = Boolean.toString(autorization.newRegistration(login, password));
                             bufferedWriter.write(msgOut);
                             bufferedWriter.newLine();
                             bufferedWriter.flush();
                         }
-                        else if(tempVar1.equals("statusCheck")){
-                            tempVar1 = bufferedReader.readLine();
-                            msgOut = Boolean.toString(autorization.checkStatus(tempVar1));
+                        else if(command.equals("statusCheck")){
+                            String userName = bufferedReader.readLine();
+                            msgOut = Boolean.toString(autorization.checkStatus(userName));
                             bufferedWriter.write(msgOut);
                             bufferedWriter.newLine();
                             bufferedWriter.flush();
                         }
-                            else if(tempVar1.equals("newBook")){
-                                tempVar4 = bufferedReader.readLine();
-                                tempVar1 = bufferedReader.readLine();
-                                tempVar2 = bufferedReader.readLine();
-                                tempVar3 = bufferedReader.readLine();
-                                msgOut = Boolean.toString(libraryManager.newBook(tempVar1, tempVar2, tempVar3,tempVar4));
+                            else if(command.equals("newBook")){
+                               String author = bufferedReader.readLine();
+                                String name = bufferedReader.readLine();
+                                String genre = bufferedReader.readLine();
+                                String owner = bufferedReader.readLine();
+                                msgOut = Boolean.toString(libraryManager.newBook(author, name, genre, owner));
                                 bufferedWriter.write(msgOut);
                                 bufferedWriter.newLine();
                                 bufferedWriter.flush();
                             }
-                            else if(tempVar1.equals("newAccount")){
-                                tempVar1 = bufferedReader.readLine();
-                                tempVar2 = bufferedReader.readLine();
-                                msgOut = Boolean.toString(autorization.newRegistration(tempVar1, tempVar2));
+                            else if(command.equals("newAccount")){
+                                String login = bufferedReader.readLine();
+                                String password = bufferedReader.readLine();
+                                msgOut = Boolean.toString(autorization.newRegistration(login, password));
                                 bufferedWriter.write(msgOut);
                                 bufferedWriter.newLine();
                                 bufferedWriter.flush();
                             }
-                            else if(tempVar1.equals("showBooks")) {
+                            else if(command.equals("showBooks")) {
                                 List<String> books = libraryManager.showBooks();
                                 for (String book : books) {
                                     System.out.println("Book: " + book);
@@ -97,10 +97,10 @@ public class Main{
                                 bufferedWriter.newLine();
                                 bufferedWriter.flush();
                             }
-                            else if(tempVar1.equals("delBook")){
-                                tempVar1 = bufferedReader.readLine();
-                                tempVar2 = bufferedReader.readLine();
-                                msgOut = Boolean.toString(libraryManager.delBook(tempVar1, tempVar2));
+                            else if(command.equals("delBook")){
+                                String name = bufferedReader.readLine();
+                                String owner = bufferedReader.readLine();
+                                msgOut = Boolean.toString(libraryManager.delBook(name, owner));
                                 bufferedWriter.write(msgOut);
                                 bufferedWriter.newLine();
                                 bufferedWriter.flush();
@@ -108,7 +108,7 @@ public class Main{
 
                         //System.out.println("Client2: " + tempVar2);
 
-                        if (tempVar1.equalsIgnoreCase("Bye")) {
+                        if (command.equalsIgnoreCase("Bye")) {
                             break;
                         }
 
