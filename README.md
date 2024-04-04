@@ -1,7 +1,7 @@
 # Class: Client
 
 ## Description
-The `Main` class serves as the entry point for the client-side of the library application. It establishes a connection with the server, handles user input, and performs corresponding actions based on selected options.
+The `Server` class serves as the entry point for the client-side of the library application. It establishes a connection with the server, handles user input, and performs corresponding actions based on selected options.
 
 ## Methods
 
