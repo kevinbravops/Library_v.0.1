@@ -42,7 +42,7 @@ The main method is the entry point of the program. It initializes the connection
 - To improve code readability, consider extracting the logic for handling options into separate methods.
 
 
-# Class: Main
+# Class: Server
 
 ## Description
 The `Main` class represents the server-side of the library application. It listens for incoming client connections, establishes communication channels, and delegates requests to appropriate handlers.
